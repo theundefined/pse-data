@@ -1,5 +1,5 @@
 #!/bin/bash
-cd dane-need
+cd dane-dane-PL_WYK_KSE
 for i in 202{0..1}{01..12}{01..31} 2022{01..03}{01..31}; do 
 	[ -f $i ] || (wget https://www.pse.pl/getcsv/-/export/csv/PL_WYK_KSE/data/$i || sleep 15) ; 
 done;
