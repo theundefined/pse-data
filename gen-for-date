@@ -1,0 +1,7 @@
+#!/bin/sh
+date=$1
+file=`echo $date |tr -d '-'`
+grep -q $date dane-PL_WYK_KSE/$file || exit
+echo -n "$date;"
+awk 'BEGIN{need=0;FS=";"}{ gsub('/,/' , "." ); need+=$3 }END{print need ";" }' < dane-PL_WYK_KSE/$file|xargs echo -n
+awk 'BEGIN{wiatr=0;pv=0;FS=";"}{ gsub('/,/' , "." ); wiatr+=$3;pv+=$4 }END{print wiatr ";" pv }' < dane-PL_GEN_WIATR/$file

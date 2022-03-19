@@ -1,0 +1,3 @@
+#!/bin/bash
+year=$1
+(for i in 2021-{01..12}-{01..31}; do ./gen-for-date $i; done;) > $year.csv
