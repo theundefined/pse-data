@@ -1,3 +1,5 @@
 #!/bin/bash
 cd dane-PL_GEN_WIATR
-for i in 202{0..2}{01..12}{01..31}; do [ -f $i ] || (wget https://www.pse.pl/getcsv/-/export/csv/PL_GEN_WIATR/data/$i; sleep 15) ; done;
+for i in 20{19..21}{01..12}{01..31} 2022{01..03}{01..31}; do 
+	[ -f $i ] || (wget https://www.pse.pl/getcsv/-/export/csv/PL_GEN_WIATR/data/$i || sleep 15) ; 
+done;
